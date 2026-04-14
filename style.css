@@ -1,0 +1,21 @@
+.center {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.login-box {
+width: 300px;
+}
+
+.card-box {
+padding: 20px;
+color: white;
+border-radius: 10px;
+}
+
+.blue { background: blue; }
+.green { background: green; }
+.red { background: red; }
+.orange { background: orange; }

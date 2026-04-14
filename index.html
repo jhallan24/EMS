@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EMS</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-primary px-4">
+<span class="navbar-brand">EMS Dashboard</span>
+
+<div>
+<button class="btn btn-light btn-sm me-2" id="dashboardNav">Dashboard</button>
+<button class="btn btn-light btn-sm me-2" id="employeeNav">Employees</button>
+<button class="btn btn-warning btn-sm" id="addBtn">Add Employee</button>
+<button class="btn btn-danger btn-sm" id="logoutBtn">Logout</button>
+</div>
+</nav>
+
+<!-- LOGIN -->
+<div id="loginSection" class="center">
+<div class="card p-4 login-box">
+<h4>Login</h4>
+<form id="loginForm">
+<input id="username" class="form-control mb-2" placeholder="Username">
+<input type="password" id="password" class="form-control mb-2" placeholder="Password">
+<button class="btn btn-primary w-100">Login</button>
+</form>
+</div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboardSection" class="container mt-4 d-none">
+<h3>Dashboard</h3>
+<div class="row" id="cards"></div>
+
+<div class="row mt-4">
+<div class="col-md-6">
+<table class="table" id="deptTable"></table>
+</div>
+<div class="col-md-6">
+<ul class="list-group" id="recentList"></ul>
+</div>
+</div>
+</div>
+
+<!-- EMPLOYEE -->
+<div id="employeeSection" class="container mt-4 d-none">
+
+<div class="d-flex mb-3">
+<input id="search" class="form-control w-25 me-2" placeholder="Search">
+<select id="deptFilter" class="form-select w-25 me-2">
+<option>All</option>
+</select>
+<select id="statusFilter" class="form-select w-25">
+<option>All</option>
+<option>Active</option>
+<option>Inactive</option>
+</select>
+</div>
+
+<table class="table table-striped">
+<thead>
+<tr>
+<th>ID</th><th>Name</th><th>Email</th>
+<th>Dept</th><th>Salary</th><th>Status</th><th>Actions</th>
+</tr>
+</thead>
+<tbody id="table"></tbody>
+</table>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="empModal">
+<div class="modal-dialog">
+<div class="modal-content p-3">
+
+<h5 id="modalTitle">Add Employee</h5>
+
+<input id="firstName" class="form-control mb-2" placeholder="First Name">
+<input id="lastName" class="form-control mb-2" placeholder="Last Name">
+<input id="email" class="form-control mb-2" placeholder="Email">
+<input id="department" class="form-control mb-2" placeholder="Department">
+<input id="salary" class="form-control mb-2" placeholder="Salary">
+<select id="status" class="form-control mb-2">
+<option>Active</option>
+<option>Inactive</option>
+</select>
+
+<button class="btn btn-success" id="saveBtn">Save</button>
+
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="data.js"></script>
+<script src="storageService.js"></script>
+<script src="authService.js"></script>
+<script src="employeeService.js"></script>
+<script src="validationService.js"></script>
+<script src="dashboardService.js"></script>
+<script src="uiService.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
